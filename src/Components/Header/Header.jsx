@@ -10,7 +10,9 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <div className="header">
-      <h1>POST 📬</h1>
+      <Link to="/">
+        <h1>POST 📬</h1>
+      </Link>
       {isLogged ? (
         <ul className="header__list">
           <li>Hi {username}</li>
@@ -19,6 +21,9 @@ const Header = () => {
           </li>
           <li className="header__list__link" onClick={() => dispatch(logout())}>
             Log out
+          </li>
+          <li className="header__list__link">
+            <Link to="/about">About Us</Link>
           </li>
         </ul>
       ) : null}

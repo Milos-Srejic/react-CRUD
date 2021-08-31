@@ -12,6 +12,7 @@ import Update from './Pages/Update/Update';
 import About from './Pages/About/About';
 import Error from './Pages/Error/Error';
 import { useSelector } from 'react-redux';
+import Header from './Components/Header/Header';
 
 function App() {
   const isLogged = useSelector((state) => state.user.isLogged);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Switch>
           <Route path="/login">
             {isLogged ? <Redirect to="/" /> : <Login />}

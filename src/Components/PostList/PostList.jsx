@@ -1,9 +1,10 @@
 import React from 'react';
+import Post from '../Post/Post';
 
 const PostList = () => {
   return (
     <div>
-      <h3>post list</h3>
+      <Post id="1" title="lorem" body="karam karam drvo" author="Sreja" />
     </div>
   );
 };

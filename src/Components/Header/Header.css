@@ -33,3 +33,8 @@
   border-bottom: 2px solid red;
   text-shadow: 2px 2px 8px red;
 }
+
+.header a {
+  color: white;
+  text-decoration: none;
+}

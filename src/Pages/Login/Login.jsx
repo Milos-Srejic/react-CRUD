@@ -16,22 +16,19 @@ const Login = () => {
 
   return (
     <div className="login">
-      <Header />
-      <div className="login__main">
-        <div className="login__form">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            placeholder="Type username..."
-            required
-            name="user"
-            value={user}
-            onChange={(e) => setUser(e.target.value)}
-          />
-          <button disabled={!user} onClick={() => handleLogin(user)}>
-            LOG IN
-          </button>
-        </div>
+      <div className="login__form">
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          placeholder="Type username..."
+          required
+          name="user"
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
+        />
+        <button disabled={!user} onClick={() => handleLogin(user)}>
+          LOG IN
+        </button>
       </div>
     </div>
   );
