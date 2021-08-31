@@ -1,13 +1,20 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import Homepage from './Pages/Homepage/Homepage';
 import Login from './Pages/Login/Login';
 import Create from './Pages/Create/Create';
 import Update from './Pages/Update/Update';
 import About from './Pages/About/About';
 import Error from './Pages/Error/Error';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const isLogged = useSelector((state) => state.user.isLogged);
   return (
     <div className="App">
       <Router>
@@ -25,7 +32,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/">
-            <Homepage />
+            {isLogged ? <Homepage /> : <Redirect to="/login" />}
           </Route>
           <Route path="*">
             <Error />
