@@ -15,12 +15,13 @@ import { useSelector } from 'react-redux';
 
 function App() {
   const isLogged = useSelector((state) => state.user.isLogged);
+
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route path="/login">
-            <Login />
+            {isLogged ? <Redirect to="/" /> : <Login />}
           </Route>
           <Route path="/create">
             <Create />

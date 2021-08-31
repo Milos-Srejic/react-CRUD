@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from '../../Components/Header/Header';
+import PostList from '../../Components/PostList/PostList';
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="homepage">
       <Header />
-      <h1>HOMEPAGE</h1>
+      <PostList />
     </div>
   );
 };

@@ -1,0 +1,38 @@
+.login {
+  height: 100vh;
+  background-color: lightgrey;
+}
+
+.login__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #181818;
+  color: white;
+}
+
+.login__form input {
+  margin-bottom: 20px;
+  width: 300px;
+  height: 32px;
+  padding-left: 5px;
+}
+
+.login__form button {
+  width: 300px;
+  height: 32px;
+  background-color: #24a0ed;
+  border: none;
+  cursor: pointer;
+}
+.login__form button:disabled {
+  background-color: lightgray;
+}

@@ -16,8 +16,8 @@ export const logout = () => ({
 // initial state
 
 const initialState = {
-  userName: 'Milos',
-  isLogged: true,
+  userName: undefined,
+  isLogged: false,
 };
 
 // reducer
@@ -25,7 +25,7 @@ const initialState = {
 export const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
-      const { user } = action.payload;
+      const { user } = action;
       return { ...state, userName: user, isLogged: true };
 
     case LOGOUT:
