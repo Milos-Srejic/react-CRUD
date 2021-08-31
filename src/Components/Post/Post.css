@@ -1,0 +1,47 @@
+.post {
+  height: 200px;
+  width: 400px;
+  background-color: orange;
+  margin: 10px 0;
+  border: 2px solid #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post__title {
+  padding: 5px 10px;
+  background-color: #181818;
+  color: white;
+}
+
+.post__body {
+  flex: 1;
+  background-color: white;
+  padding: 10px;
+}
+
+.post__author {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-style: italic;
+  background-color: #303030;
+  color: white;
+}
+
+.post__bottom button {
+  padding: 0px 10px;
+  margin-left: 10px;
+  width: 60px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post__bottom__edit {
+  background-color: orange;
+}
+.post__bottom__delete {
+  background-color: red;
+}

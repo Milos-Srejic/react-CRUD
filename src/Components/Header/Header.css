@@ -6,6 +6,8 @@
   align-items: center;
   background-color: #181818;
   color: white;
+  position: sticky;
+  top: 0px;
 }
 
 .header__list {
