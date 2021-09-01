@@ -11,6 +11,20 @@
       "title": "lorem2",
       "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa, debitis quod quos delectus quo voluptatem aliquam animi mollitia voluptatum?",
       "author": "Zika"
+    },
+    {
+      "title": "test naslov",
+      "body": "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla",
+      "user": "Sreja",
+      "fullDate": "1/9/2021",
+      "id": 3
+    },
+    {
+      "title": "test123",
+      "body": "test123123",
+      "user": "Sreja",
+      "fullDate": "1/9/2021",
+      "id": 4
     }
   ]
 }

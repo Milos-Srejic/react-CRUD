@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Login.css';
-import Header from '../../Components/Header/Header';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/ducks/User';
 import { useHistory } from 'react-router-dom';
