@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './Post.css';
+import { Link } from 'react-router-dom';
 
 const Post = (props) => {
   const currentUser = useSelector((state) => state.user.userName);
@@ -13,10 +14,12 @@ const Post = (props) => {
         {author}
         {author === currentUser ? (
           <div className="post__bottom">
-            <button className="post__bottom__edit">EDIT</button>
+            <button className="post__bottom__edit">
+              <Link to={`/edit/${id}`}>EDIT</Link>
+            </button>
             <button className="post__bottom__delete">DELETE</button>
           </div>
-        ) : null}{' '}
+        ) : null}
       </div>
     </div>
   );

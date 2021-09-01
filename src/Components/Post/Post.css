@@ -38,7 +38,10 @@
   font-weight: bold;
   cursor: pointer;
 }
-
+.post__bottom button a {
+  text-decoration: none;
+  color: black;
+}
 .post__bottom__edit {
   background-color: orange;
 }

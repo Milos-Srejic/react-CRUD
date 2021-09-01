@@ -8,11 +8,11 @@ import {
 import Homepage from './Pages/Homepage/Homepage';
 import Login from './Pages/Login/Login';
 import Create from './Pages/Create/Create';
-import Update from './Pages/Update/Update';
 import About from './Pages/About/About';
 import Error from './Pages/Error/Error';
 import { useSelector } from 'react-redux';
 import Header from './Components/Header/Header';
+import Edit from './Pages/Edit/Edit';
 
 function App() {
   const isLogged = useSelector((state) => state.user.isLogged);
@@ -28,8 +28,8 @@ function App() {
           <Route path="/create">
             <Create />
           </Route>
-          <Route path="/update/:postID">
-            <Update />
+          <Route path="/edit/:id">
+            <Edit />
           </Route>
           <Route path="/about">
             <About />
