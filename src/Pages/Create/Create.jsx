@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 const Create = () => {
-  const user = useSelector((state) => state.user.userName);
+  const author = useSelector((state) => state.user.userName);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const history = useHistory();
   const initialValues = {
@@ -23,13 +23,12 @@ const Create = () => {
     const month = date.getUTCMonth() + 1;
     const year = date.getUTCFullYear();
     const fullDate = `${day}/${month}/${year}`;
-    const data = { ...values, user, fullDate };
+    const data = { ...values, author, fullDate };
     axios
       .post('http://localhost:8000/posts', data, {
         headers: { 'Content-Type': 'application/json' },
       })
       .then(() => {
-        console.log('Submited to api');
         onSubmitProps.resetForm();
         setIsSubmiting(false);
         history.push('/');

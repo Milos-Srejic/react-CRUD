@@ -1,30 +1,18 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "lorem",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa, debitis quod quos delectus quo voluptatem aliquam animi mollitia voluptatum?",
-      "author": "Pera"
-    },
-    {
-      "id": 2,
-      "title": "lorem2",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa, debitis quod quos delectus quo voluptatem aliquam animi mollitia voluptatum?",
-      "author": "Zika"
-    },
-    {
-      "title": "test naslov",
-      "body": "blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla",
-      "user": "Sreja",
+      "title": "sreja legenda",
+      "body": "sjbhakhjubfhu rhbgebgwkh gregerg",
+      "author": "Sreja",
       "fullDate": "1/9/2021",
-      "id": 3
+      "id": 1
     },
     {
-      "title": "test123",
-      "body": "test123123",
-      "user": "Sreja",
+      "title": "novi post",
+      "body": "fqgqeg",
+      "author": "Sreja",
       "fullDate": "1/9/2021",
-      "id": 4
+      "id": 2
     }
   ]
 }
