@@ -26,7 +26,7 @@ function App() {
             {isLogged ? <Redirect to="/" /> : <Login />}
           </Route>
           <Route path="/create">
-            <Create />
+            {isLogged ? <Create /> : <Redirect to="/" />}
           </Route>
           <Route path="/edit/:id">
             <Edit />

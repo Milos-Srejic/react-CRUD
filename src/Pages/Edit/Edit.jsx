@@ -60,55 +60,52 @@ const Edit = () => {
   };
   return (
     <div className="edit">
-      {
-        (title,
-        body && (
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={onSubmit}
-          >
-            {(formik) => {
-              return (
-                <Form className="edit__form">
-                  <div className="form__field">
-                    <label htmlFor="title">Title</label>
-                    <Field
-                      type="text"
-                      name="title"
-                      id="title"
-                      placeholder="Enter title..."
-                    />
-                    <div className="form__field__error">
-                      <ErrorMessage name="title" />
-                    </div>
+      {title && body && (
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={onSubmit}
+        >
+          {(formik) => {
+            return (
+              <Form className="edit__form">
+                <div className="form__field">
+                  <label htmlFor="title">Title</label>
+                  <Field
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="Enter title..."
+                  />
+                  <div className="form__field__error">
+                    <ErrorMessage name="title" />
                   </div>
-                  <div className="form__field">
-                    <label htmlFor="body">Post</label>
-                    <Field
-                      as="textarea"
-                      name="body"
-                      id="body"
-                      placeholder="Enter post..."
-                    />
-                    <div className="form__field__error">
-                      <ErrorMessage name="body" />
-                    </div>
+                </div>
+                <div className="form__field">
+                  <label htmlFor="body">Post</label>
+                  <Field
+                    as="textarea"
+                    name="body"
+                    id="body"
+                    placeholder="Enter post..."
+                  />
+                  <div className="form__field__error">
+                    <ErrorMessage name="body" />
                   </div>
+                </div>
 
-                  <button
-                    disabled={!formik.isValid || isSubmiting}
-                    className="form__button"
-                    type="submit"
-                  >
-                    Update
-                  </button>
-                </Form>
-              );
-            }}
-          </Formik>
-        ))
-      }
+                <button
+                  disabled={!formik.isValid || isSubmiting}
+                  className="form__button"
+                  type="submit"
+                >
+                  Update
+                </button>
+              </Form>
+            );
+          }}
+        </Formik>
+      )}
     </div>
   );
 };
