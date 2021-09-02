@@ -29,10 +29,10 @@ function App() {
             {isLogged ? <Create /> : <Redirect to="/" />}
           </Route>
           <Route path="/edit/:id">
-            <Edit />
+            {isLogged ? <Edit /> : <Redirect to="/" />}
           </Route>
           <Route path="/about">
-            <About />
+            {isLogged ? <About /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/">
             {isLogged ? <Homepage /> : <Redirect to="/login" />}
