@@ -1,11 +1,26 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './Post.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const Post = (props) => {
   const currentUser = useSelector((state) => state.user.userName);
   const { id, title, body, author, date } = props;
+  const history = useHistory();
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:8000/posts/${id}`)
+      .then((response) => {
+        console.log(response);
+      })
+      .then(() => {
+        history.push('/');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return (
     <div className="post">
       <div className="post__title">{title}</div>
@@ -17,7 +32,12 @@ const Post = (props) => {
             <button className="post__bottom__edit">
               <Link to={`/edit/${id}`}>EDIT</Link>
             </button>
-            <button className="post__bottom__delete">DELETE</button>
+            <button
+              onClick={() => handleDelete(id)}
+              className="post__bottom__delete"
+            >
+              DELETE
+            </button>
           </div>
         ) : null}
       </div>
