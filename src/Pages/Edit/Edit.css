@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #1e1e1e;
 }
 
 .edit__form {
@@ -15,37 +16,41 @@
   color: white;
 }
 
-.form__field {
+.edit__form__field {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   width: 300px;
 }
 
-.form__field label {
+.edit__form__field label {
   font-size: 32px;
 }
 
-.form__field input {
+.edit__form__field input {
   height: 32px;
   padding-left: 10px;
   font-size: 16px;
 }
 
-.form__field textarea {
+.edit__form__field textarea {
   padding: 5px 10px;
   font-size: 16px;
 }
 
-.form__button {
+.edit__form__button {
   height: 32px;
-  background-color: #24a0ed;
+  background-color: rgb(59, 168, 59);
   border: 0;
 }
 
-.form__button:disabled {
+.edit__form__button:disabled {
   background-color: lightgray;
 }
-.form__field__error {
+
+.edit__form__button:hover {
+  cursor: pointer;
+}
+.edit__form__field__error {
   height: 24px;
 }

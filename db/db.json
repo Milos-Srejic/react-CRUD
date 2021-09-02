@@ -1,3 +1,18 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "sreja legenda",
+      "body": "jeste",
+      "author": "Sreja",
+      "fullDate": "2/9/2021",
+      "id": 1
+    },
+    {
+      "title": "axios post proba",
+      "body": "SADSADS123",
+      "author": "Sreja",
+      "fullDate": "2/9/2021",
+      "id": 2
+    }
+  ]
 }
