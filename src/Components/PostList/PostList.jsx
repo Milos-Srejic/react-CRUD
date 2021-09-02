@@ -15,7 +15,7 @@ const PostList = () => {
   }, [dispatch]);
   return (
     <div>
-      {isLoading ? 'Loading...' : null}
+      {isLoading ? <div style={{ color: 'white' }}>Loading...</div> : null}
       {error ? <h3>{error}</h3> : null}
       {posts &&
         posts.map((post) => {

@@ -19,6 +19,7 @@
   flex: 1;
   background-color: white;
   padding: 10px;
+  color: black;
 }
 
 .post__author {
