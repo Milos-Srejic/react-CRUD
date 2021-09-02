@@ -1,6 +1,7 @@
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
+const DELETE_POST = 'DELETE_POST';
 
 export const fetchPosts = () => ({
   type: FETCH_POSTS,
@@ -14,6 +15,11 @@ export const fetchPostsSuccess = (posts) => ({
 export const fetchPostsFailure = (error) => ({
   type: FETCH_POSTS_FAILURE,
   error: error,
+});
+
+export const deletePost = (id) => ({
+  type: DELETE_POST,
+  id: id,
 });
 
 const initialState = {
@@ -32,6 +38,14 @@ export const postReducer = (state = initialState, action) => {
     case FETCH_POSTS_FAILURE:
       const { error } = action;
       return { ...state, isLoading: false, posts: [], error: error };
+
+    case DELETE_POST:
+      const { id } = action;
+      return {
+        ...state,
+        posts: state.posts.filter((post) => post.id !== id),
+      };
+
     default:
       return state;
   }
