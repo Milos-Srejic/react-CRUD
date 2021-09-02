@@ -1,0 +1,19 @@
+.error {
+  height: calc(100vh - 80px);
+  background-color: #1e1e1e;
+  color: white;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__button {
+  margin-top: 10px;
+  background-color: white;
+  padding: 5px;
+  border: 0;
+  font-size: large;
+  cursor: pointer;
+}
