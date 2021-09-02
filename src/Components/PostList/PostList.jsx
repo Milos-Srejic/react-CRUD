@@ -1,28 +1,18 @@
 import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Post from '../../Components/Post/Post';
+import { fetchPosts } from '../../redux/ducks/Post';
 
 const PostList = () => {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const posts = useSelector((state) => state.post.posts);
+  const isLoading = useSelector((state) => state.post.isLoading);
+  const error = useSelector((state) => state.post.error);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get('http://localhost:8000/posts')
-      .then((response) => {
-        setPosts(response.data);
-        setIsLoading(false);
-        setError(null);
-      })
-      .catch((error) => {
-        setPosts([]);
-        setIsLoading(false);
-        setError(error);
-      });
+    dispatch(fetchPosts());
   }, []);
   return (
     <div>
