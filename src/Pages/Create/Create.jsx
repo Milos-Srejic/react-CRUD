@@ -7,7 +7,26 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Create = () => {
+  toast.configure();
+  const notify = () => {
+    toast.success('Post created!', {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
+      theme: 'colored',
+    });
+  };
+
+  const notifyError = () => {
+    toast.error('Error!', {
+      position: 'top-center',
+      theme: 'colored',
+      autoClose: 2000,
+    });
+  };
   const author = useSelector((state) => state.user.userName);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const history = useHistory();
@@ -31,10 +50,12 @@ const Create = () => {
       .then(() => {
         onSubmitProps.resetForm();
         setIsSubmiting(false);
+        notify();
         history.push('/');
       })
       .catch((error) => {
         console.error(error);
+        notifyError();
       });
   };
 

@@ -7,8 +7,26 @@ import axios from 'axios';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Edit = () => {
+  toast.configure();
+  const notify = () => {
+    toast.success('Post updated!', {
+      position: 'top-center',
+      theme: 'colored',
+      autoClose: 2000,
+    });
+  };
+
+  const notifyError = () => {
+    toast.error('Error!', {
+      position: 'top-center',
+      theme: 'colored',
+      autoClose: 2000,
+    });
+  };
   const { id } = useParams();
   const [isSubmiting, setIsSubmiting] = useState(false);
   const [title, setTitle] = useState('');
@@ -49,6 +67,7 @@ const Edit = () => {
       .patch(`http://localhost:8000/posts/${id}`, { title, body, fullDate })
       .then(() => {
         setIsSubmiting(false);
+        notify();
 
         onSubmitProps.resetForm();
         history.push('/');
@@ -56,6 +75,7 @@ const Edit = () => {
       .catch((error) => {
         setIsSubmiting(false);
         console.error(error);
+        notifyError();
       });
   };
   return (
