@@ -12,7 +12,7 @@ const PostList = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       {isLoading ? 'Loading...' : null}

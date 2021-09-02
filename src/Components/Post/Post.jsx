@@ -1,20 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Post.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { deletePost } from '../../redux/ducks/Post';
 
 const Post = (props) => {
   const currentUser = useSelector((state) => state.user.userName);
   const { id, title, body, author, date } = props;
-  const history = useHistory();
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     axios
       .delete(`http://localhost:8000/posts/${id}`)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         dispatch(deletePost(id));
       })
       .catch((error) => {
