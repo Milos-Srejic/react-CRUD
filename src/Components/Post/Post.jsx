@@ -2,22 +2,14 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Post.css';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { deletePost } from '../../redux/ducks/Post';
+import { deletePostApi } from '../../redux/ducks/Post';
 
 const Post = (props) => {
   const currentUser = useSelector((state) => state.user.userName);
   const { id, title, body, author, date } = props;
   const dispatch = useDispatch();
   const handleDelete = (id) => {
-    axios
-      .delete(`http://localhost:8000/posts/${id}`)
-      .then(() => {
-        dispatch(deletePost(id));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    dispatch(deletePostApi(id));
   };
   return (
     <div className="post">

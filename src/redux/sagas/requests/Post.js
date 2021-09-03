@@ -6,3 +6,10 @@ export function requestGetPosts() {
     url: 'http://localhost:8000/posts',
   });
 }
+
+export function requestDeletePostApi(id) {
+  return axios.request({
+    method: 'DELETE',
+    url: `http://localhost:8000/posts/${id}`,
+  });
+}

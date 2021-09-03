@@ -1,6 +1,7 @@
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
+export const DELETE_POST_API = 'DELETE_POST_API';
 const DELETE_POST = 'DELETE_POST';
 
 export const fetchPosts = () => ({
@@ -17,6 +18,10 @@ export const fetchPostsFailure = (error) => ({
   error: error,
 });
 
+export const deletePostApi = (id) => ({
+  type: DELETE_POST_API,
+  id: id,
+});
 export const deletePost = (id) => ({
   type: DELETE_POST,
   id: id,

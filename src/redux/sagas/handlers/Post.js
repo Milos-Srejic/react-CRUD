@@ -1,6 +1,10 @@
 import { call, put } from '@redux-saga/core/effects';
-import { requestGetPosts } from '../requests/Post';
-import { fetchPostsFailure, fetchPostsSuccess } from '../../ducks/Post';
+import { requestDeletePostApi, requestGetPosts } from '../requests/Post';
+import {
+  deletePost,
+  fetchPostsFailure,
+  fetchPostsSuccess,
+} from '../../ducks/Post';
 
 export function* handleGetPosts() {
   try {
@@ -9,5 +13,15 @@ export function* handleGetPosts() {
     yield put(fetchPostsSuccess(data));
   } catch (error) {
     yield put(fetchPostsFailure(error));
+  }
+}
+
+export function* handleDeletePostApi(action) {
+  const { id } = action;
+  try {
+    yield call(requestDeletePostApi, id);
+    yield put(deletePost(id));
+  } catch (error) {
+    console.error(error);
   }
 }
