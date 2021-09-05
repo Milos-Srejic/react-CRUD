@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
+import loginReducer from "../Pages/Login/Redux-Saga/reducer";
 import { postReducer } from "./ducks/Post";
-import { userReducer } from "./ducks/User";
 
 const rootReducer = combineReducers({
-	user: userReducer,
+	login: loginReducer,
 	post: postReducer,
 });
 
