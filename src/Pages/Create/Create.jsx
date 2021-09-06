@@ -27,7 +27,7 @@ const Create = () => {
       autoClose: 2000,
     });
   };
-  const author = useSelector((state) => state.user.userName);
+  const author = useSelector((state) => state.login.userName);
   const [isSubmiting, setIsSubmiting] = useState(false);
   const history = useHistory();
   const initialValues = {
